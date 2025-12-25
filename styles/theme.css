@@ -1,0 +1,25 @@
+@theme {
+    /* Background */
+  --color-background-light: #FFFFFF;
+  --color-background-dark: #18181B;
+
+    /* Surface / Secondary BG */
+  --color-surface-light: #F9FAFB;
+  --color-surface-dark: #27272A;
+
+    /* Primary */
+  --color-primary-light: #2563EB;
+  --color-primary-dark: #3B82F6;
+
+    /* Accent */
+  --color-accent-light: #F97316;
+  --color-accent-dark: #F97316;
+
+    /* Text */
+  --color-text-light: #111827;
+  --color-text-dark: #E5E7EB;
+
+    /* Subtext */
+  --color-subtext-light: #6B7280;
+  --color-subtext-dark: #9CA3AF;
+}
