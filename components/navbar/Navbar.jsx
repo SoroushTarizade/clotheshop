@@ -17,23 +17,23 @@ const Header = () => {
             <div>
                 <ul className="flex gap-5 items-center ">
                     <li>
-                        <Link href="/" className='hover:font-bold'>Home</Link>
+                        <Link href="/" className='hover:font-bold duration-300'>Home</Link>
                     </li>
                     <li>
-                        <Link href="discover" className='hover:font-bold'>Discover</Link>
+                        <Link href="discover" className='hover:font-bold duration-300'>Discover</Link>
                     </li>
                     <li>
-                        <Link href="faqs"  className='hover:font-bold'>
+                        <Link href="faqs"  className='hover:font-bold duration-300'>
                         FAQs
                         </Link>
                     </li>
                     <li>
-                        <Link href="about" className='hover:font-bold'>
+                        <Link href="about" className='hover:font-bold duration-300'>
                         About Us
                         </Link>
                     </li>
                     <li>
-                        <Link href="connect" className='hover:font-bold'>Connect Us</Link>
+                        <Link href="connect" className='hover:font-bold duration-300'>Connect Us</Link>
                     </li>
                 </ul>
             </div>

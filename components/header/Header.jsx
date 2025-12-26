@@ -11,7 +11,7 @@ const Header = () => {
                     <p className='w-[613px] h-[66px] text-left text-justify text-balance mb-5'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                     </p>
-                    <button className='bg-[#F2B138] w-[140px] h-[38px] rounded-[28px] flex items-center gap-3 px-[22px] py-[10px] text-[15px] font-500 cursor-pointer hover:font-bold'>
+                    <button className='bg-[#F2B138] w-[140px] h-[38px] rounded-[28px] flex items-center gap-3 px-[22px] py-[10px] text-[15px] font-500 cursor-pointer hover:font-bold duration-300'>
                         See More
                         <span>
                             <IoIosArrowRoundForward className='w-[14px]'></IoIosArrowRoundForward>
