@@ -1,10 +1,16 @@
-import React from 'react';
-import { IoIosArrowRoundForward } from "react-icons/io";
+import React, { useEffect } from 'react';
+import { IoIosArrowRoundForward } from "react-icons/io";5
+import 'aos';
 const Header = () => {
+    useEffect()
     return (
         <>
-            <div className='flex items-center w-[1200px] m-auto justify-between mt-[-450px] px-10'>
-                <div className='text-[#FDF6F6]'>
+            <div className='flex items-center w-[1200px] m-auto justify-between  px-10 relative'>
+            <div
+            data-aos="fade-right"
+            className="w-[1138px] h-[611px] bg-[#01727D] absolute top-[-67px] left-[-500px] rounded-br-[171px] z-[-1]"
+            ></div>
+                <div className='text-[#FDF6F6] z-100'>
                     <h1 className='font-700 text-[64px] mb-10'>
                         How to Rent?
                     </h1>
@@ -22,6 +28,7 @@ const Header = () => {
                     <img src="./images/header-img.jpg" alt="header-img" className='w-[342px] h-[532px] rounded-t-[171px]'/>
                 </div>
             </div>
+
         </>
     );
 }
