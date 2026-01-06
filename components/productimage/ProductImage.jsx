@@ -15,21 +15,24 @@ const ProductImage = () => {
             ))}
           </div>
 
-          <div className="group overflow-hidden rounded-lg">
+          <div
+            data-aos="fade-right"
+            className="group overflow-hidden rounded-lg">
             <img
-              data-aos="fade-right"
+              // data-aos-duration="5000"
               src="./images/category-3.jpg"
-              className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90"
+              className="w-full h-full object-cover transition duration-300 group-hover:scale-110 group-hover:brightness-90"
             />
           </div>
         </div>
         <div className="grid grid-rows-[424px_251px] gap-10">
           {["category-4.jpg", "category-5.jpg"].map((img, i) => (
-            <div key={i} className="group overflow-hidden rounded-lg">
+            <div key={i}
+              data-aos={i % 2 === 0 ? "" : "fade-left"}
+              className="group overflow-hidden rounded-lg">
               <img
-                data-aos={i % 2 === 0 ? "" : "fade-left"}
                 src={`./images/${img}`}
-                className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90"
+                className="w-full h-full object-cover transition duration-300 group-hover:scale-110 group-hover:brightness-90"
               />
             </div>
           ))}
