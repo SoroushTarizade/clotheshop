@@ -1,30 +1,25 @@
 import React from 'react';
 
 const Contact = () => {
-    return (
-        <>
-            <div className='w-[1540px] h-[220px] bg-[#01727D] mx-auto'>
-                <div className='w-[1082px] mx-auto flex items-center justify-between'>
-                    <div className='w-[704]'>
-                        <div className='pt-6'>
-                            <h3 className='text-[38px] font-bold text-white '>Join Us</h3>
-                        </div>
-                        <div className='w-[704px] text-white text-[18px] pt-5'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        </div>
-                    </div>
-                    <div className='flex gap-12 items-center text-white'>
-                        <button className='w-[102px] h-[38px] bg-[#F2B138] rounded-[24px] duration-300 hover:font-bold cursor-pointer'>
-                            Join us
-                        </button>
-                        <button className='w-[132px] h-[38px] border-[1px] border-white rounded-[24px] duration-300 hover:font-bold cursor-pointer'>
-                            Contact Us 
-                        </button>
-                    </div>
-                </div>
-            </div>   
-        </>
-    );
-}
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-r from-[#01727D] to-[#0aa6b5] py-20">
+      <div className="absolute -top-24 -left-24 w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl"/>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"/>
+
+      <div className="relative max-w-[1080px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10 text-white">
+        <div>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">Join our community</h3>
+          <p className="max-w-md text-white/90">Get exclusive deals, early access and special offers.</p>
+        </div>
+
+        <div className="flex gap-4">
+          <button className="bg-[#F2B138] text-white px-8 py-3 rounded-full hover:scale-105 transition">Join us</button>
+          <button className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-[#01727D] transition">Contact us</button>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Contact;
+

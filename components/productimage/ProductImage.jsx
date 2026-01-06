@@ -1,25 +1,42 @@
-import React from 'react';
-
+import React from "react";
 const ProductImage = () => {
-    return (
-        <>
-            <div className='w-[1150px] h-[715px] flex items-center justify-around mx-auto mt-30'>
-                <div className='w-[605px] h-full flex-col justify-between'>
-                    <div className='h-[275px] flex justify-between mb-10'>
-                        <img src="./images/category-1.jpg" alt="image-1" className='w-[281px] h-full rounded-[6px] object-cover hover:w-[300px] duration-300'/>
-                        <img src="./images/category-2.jpg" alt="image-2" className='w-[281px] h-full rounded-[6px] object-cover hover:w-[300px] duration-300'/>
-                    </div>
-                    <div className='h-[399px] '>
-                        <img src="./images/category-3.jpg" alt="image-3" className='w-[605px] h-full object-cover rounded-[6px] duration-300 hover:h-[420px] '/>
-                    </div>
-                </div>
-                <div className=' flex flex-col gap-10'>
-                    <img src="./images/category-4.jpg" alt="category-4" className='w-[438px] h-[424px] rounded-[6px] object-cover hover:w-[457px] duration-300'/>
-                    <img src="./images/category-5.jpg" alt="category-5" className='w-[438px] h-[251px] rounded-[6px] object-cover hover:w-[457px] duration-300'/>
-                </div>
-            </div>   
-        </> 
-    );
-}
+  return (
+    <section className="w-full flex justify-center py-20">
+      <div className="w-[1150px] max-w-full grid grid-cols-1 lg:grid-cols-[605px_438px] gap-10">
+        <div className="grid grid-rows-[275px_399px] gap-10">
+          <div className="grid grid-cols-2 gap-10">
+            {["category-1.jpg", "category-2.jpg"].map((img, i) => (
+              <div key={i} className="group overflow-hidden rounded-lg">
+                <img
+                  src={`./images/${img}`}
+                  className="w-full h-full object-cover transition duration-300 group-hover:scale-110 group-hover:brightness-90"
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="group overflow-hidden rounded-lg">
+            <img
+              data-aos="fade-right"
+              src="./images/category-3.jpg"
+              className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90"
+            />
+          </div>
+        </div>
+        <div className="grid grid-rows-[424px_251px] gap-10">
+          {["category-4.jpg", "category-5.jpg"].map((img, i) => (
+            <div key={i} className="group overflow-hidden rounded-lg">
+              <img
+                data-aos={i % 2 === 0 ? "" : "fade-left"}
+                src={`./images/${img}`}
+                className="w-full h-full object-cover transition duration-500 group-hover:scale-110 group-hover:brightness-90"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default ProductImage;

@@ -1,60 +1,27 @@
-import React from 'react';
-
+import React from "react";
 const Sales = () => {
     return (
-        <>
-         <div className='w-[1540px] h-[1172px] flex flex-col bg-green-900 mx-auto mt-25'>
-            <div className='h-1/2 w-full flex'>
-                <div className='w-1/2 h-full bg-orange-500'>
-                    <img src="./images/sales-img1.jpg" alt="" className='w-full h-full object-cover'/>
+        <section className="max-w-[1440px] mx-auto py-20 grid grid-cols-1 md:grid-cols-2">
+            {[
+                { title: "Office Sales", img: "sales-img1.jpg" },
+                { title: "Summer is Here", img: "sales-img2.jpg" }
+            ].map((item, i) => (
+                <div key={i} className="relative h-[400px] md:h-[500px]">
+                    <img src={`./images/${item.img}`} className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-black/30" />
+                    <div className="absolute inset-0 flex items-center justify-center text-white text-center p-6">
+                        <div
+                            data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}>
+                            <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
+                            <p className="text-sm max-w-sm mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <button className="bg-[#F2B138] px-6 py-2 rounded-full">See More</button>
+                        </div>
+                    </div>
                 </div>
-                <div className='w-1/2 h-full bg-[#FDF6F6] relative'>
-                <div className='w-[303px] h-full flex  flex-col absolute top-50 right-50 '>
-                <div>
-                    <h3 className='font-bold text-[36px] w-[282px] h-[35px] mb-5'>
-                        Office Sales
-                    </h3>
-                </div>
-                <div>
-                    <p className=''>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard.
-                    </p>
-                </div>
-                <div className='mt-5'>
-                    <button className='w-[118px] h-[38px] bg-[#F2B138] rounded-[24px] text-white hover:font-bold duration-300'>
-                            See More
-                    </button>
-                </div>
-                </div>
-                </div>
-            </div>
-            <div className='bg-red-400 h-1/2 w-full flex'>
-                <div className='w-1/2 h-full bg-[#FDF6F6] relative'>
-                <div className='w-[303px] h-full flex  flex-col absolute top-50 right-50 '>
-                <div>
-                    <h3 className='font-bold text-[36px] w-[282px] h-[35px] mb-5 '>
-                        Summer is Here
-                    </h3>
-                </div>
-                <div>
-                    <p className=''>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard.
-                    </p>
-                </div>
-                <div className='mt-5 w-full relative'>
-                    <button className='w-[118px] h-[38px] bg-[#F2B138] rounded-[24px] text-white hover:font-bold duration-300 right-0'>
-                            See More
-                    </button>
-                </div>
-                </div>
-                </div>
-                <div className='w-1/2 h-full '>
-                    <img src="./images/sales-img2.jpg" alt="" className='w-full h-full object-cover'/>
-                </div>
-            </div>
-        </div>   
-        </>
+            ))}
+
+        </section>
     );
-}
+};
 
 export default Sales;

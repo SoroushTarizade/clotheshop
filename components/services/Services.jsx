@@ -1,51 +1,28 @@
-import React from 'react';
-// import { MdHighQuality } from "react-icons/md";
+import React from "react";
 import { MdHighQuality } from "react-icons/md";
 import { PiFediverseLogoThin } from "react-icons/pi";
-import { GiReceiveMoney } from "react-icons/gi";
-import { GiWorld } from "react-icons/gi";
+import { GiReceiveMoney, GiWorld } from "react-icons/gi";
+
 const Services = () => {
-    const style = { color: "white", }
+    const items = [
+        { icon: <GiWorld />, text: "Environmentally Friendly" },
+        { icon: <GiReceiveMoney />, text: "Saves Money" },
+        { icon: <PiFediverseLogoThin />, text: "Diverse" },
+        { icon: <MdHighQuality />, text: "High Quality" },
+    ];
+
     return (
-        <>
-            <div className='w-[1082px] h-[185px] flex items-center mx-auto mt-25'>
-                <div className='w-[711px] h-[152px] flex justify-between items-center mx-auto'>
-                    <div className='flex flex-col gap-3'>
-                        <div className='w-[135px] h-[65px] '>
-                            <div className='w-[65px] h-[65px] bg-[#2E2B2B] rounded-full relative mx-auto'>
-                            <GiWorld style={style} className='w-[43px] h-[43px] absolute felx top-3 left-2.5' />
-                            </div>
-                        </div>
-                        <div className='mx-auto  text-center'>Environmentally Friendly</div>
+        <section className="max-w-[1082px] mx-auto px-4 py-16 grid grid-cols-2 sm:grid-cols-4 gap-8">
+            {items.map((item, i) => (
+                <div key={i} className="flex flex-col items-center gap-3 text-center">
+                    <div className="w-16 h-16 bg-[#2E2B2B] rounded-full flex items-center justify-center text-white text-3xl">
+                        {item.icon}
                     </div>
-                    <div className='flex flex-col gap-3'>
-                        <div className='w-[135px] h-[65px] '>
-                            <div className='w-[65px] h-[65px] bg-[#2E2B2B] rounded-full relative mx-auto'>
-                            <GiReceiveMoney style={style} className='w-[43px] h-[43px] absolute felx top-3 left-2.5' />
-                            </div>
-                        </div>
-                        <div className='mx-auto text-center'>Saves Money</div>
-                    </div>
-                    <div className='flex flex-col gap-3'>
-                        <div className='w-[135px] h-[65px] '>
-                            <div className='w-[65px] h-[65px] bg-[#2E2B2B] rounded-full relative mx-auto'>
-                            <PiFediverseLogoThin style={style} className='w-[43px] h-[43px] absolute felx top-3 left-2.5' />
-                            </div>
-                        </div>
-                        <div className='mx-auto text-center'>Diverse</div>
-                    </div>
-                    <div className='flex flex-col gap-3'>
-                        <div className='w-[135px] h-[65px] '>
-                            <div className='w-[65px] h-[65px] bg-[#2E2B2B] rounded-full relative mx-auto'>
-                            <MdHighQuality style={style} className='w-[43px] h-[43px] absolute felx top-3 left-2.5' />
-                            </div>
-                        </div>
-                        <div className='mx-auto text-center'>High Quality</div>
-                    </div>
+                    <p className="text-sm">{item.text}</p>
                 </div>
-            </div>   
-        </>
+            ))}
+        </section>
     );
-}
+};
 
 export default Services;
