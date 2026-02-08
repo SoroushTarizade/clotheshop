@@ -22,6 +22,7 @@ const ProductImage = () => {
               // data-aos-duration="5000"
               src="./images/category-3.jpg"
               className="w-full h-full object-cover transition duration-300 group-hover:scale-110 group-hover:brightness-90"
+              alt=""
             />
           </div>
         </div>
@@ -33,6 +34,7 @@ const ProductImage = () => {
               <img
                 src={`./images/${img}`}
                 className="w-full h-full object-cover transition duration-300 group-hover:scale-110 group-hover:brightness-90"
+                alt=""
               />
             </div>
           ))}

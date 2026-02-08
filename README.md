@@ -1,4 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛍️ Clothing Shop – Frontend Project
+
+A modern e-commerce frontend built with **Next.js** and **React**.
+
+## 🚀 Features
+- Product listing from REST API
+- Live search & category filtering
+- Authentication flow (login required for add to cart)
+- Shopping cart with quantity control
+- Cart persistence using LocalStorage
+- Responsive UI (Mobile & Desktop)
+- Clean UI / UX with Tailwind CSS
+
+## 🛠 Tech Stack
+- Next.js (App Router)
+- React.js
+- JavaScript (ES6+)
+- Tailwind CSS
+- Context API
+
+## 🔐 Demo Login
 
 ## Getting Started
 

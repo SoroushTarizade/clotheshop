@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import PostCard from "@/components/postCard/PostCard";
 import { IoSearchOutline } from "react-icons/io5";
+import Image from "next/image";
 
 const filters = {
     Categories: ["men's clothing", "women's clothing", "electronics", "jewelery"],
@@ -16,11 +17,10 @@ const DiscoverPage = () => {
     const [activeCategory, setActiveCategory] = useState("");
     const [loading, setLoading] = useState(true);
 
-    // 🔹 Fetch products
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await fetch("https://fakestoreapi.com/products");
+                const res = await fetch("/api/products");
                 const data = await res.json();
                 setProducts(data);
             } catch (error) {
@@ -33,7 +33,6 @@ const DiscoverPage = () => {
         fetchProducts();
     }, []);
 
-    // 🔍 Live Search + Category Filter
     const filteredProducts = products.filter((product) => {
         const matchesSearch = product.title
             .toLowerCase()
@@ -50,12 +49,14 @@ const DiscoverPage = () => {
         <>
             <Navbar />
 
-            {/* 🔥 Header / Hero */}
+            {/* Hero */}
             <section className="relative h-60 sm:h-72">
-                <img
+                <Image
                     src="/images/discover-img.jpg"
-                    alt="Discover"
-                    className="absolute inset-0 w-full h-full object-cover object-[50%_20%]"
+                    alt="Discover products"
+                    fill
+                    priority
+                    className="object-cover object-[50%_20%]"
                 />
                 <div className="absolute inset-0 bg-black/40" />
                 <div className="relative z-10 h-full flex items-center max-w-7xl mx-auto px-4">
@@ -68,11 +69,11 @@ const DiscoverPage = () => {
                 </div>
             </section>
 
-            {/* 🧠 Main */}
+            {/* Main */}
             <main className="max-w-7xl mx-auto px-4 py-10">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
 
-                    {/* 🧩 Sidebar */}
+                    {/* Sidebar */}
                     <aside className="bg-white border rounded-lg p-5 space-y-8 h-fit">
                         <h3 className="font-semibold text-lg">Filters</h3>
 
@@ -89,9 +90,7 @@ const DiscoverPage = () => {
                                             name="category"
                                             checked={activeCategory === cat}
                                             onChange={() =>
-                                                setActiveCategory(
-                                                    activeCategory === cat ? "" : cat
-                                                )
+                                                setActiveCategory(activeCategory === cat ? "" : cat)
                                             }
                                             className="accent-[#388186]"
                                         />
@@ -111,10 +110,10 @@ const DiscoverPage = () => {
                         </div>
                     </aside>
 
-                    {/* 🛍 Products */}
+                    {/* Products */}
                     <section className="lg:col-span-3">
 
-                        {/* 🔍 Search */}
+                        {/* Search */}
                         <div className="relative mb-8">
                             <IoSearchOutline className="absolute left-3 top-3.5 text-gray-400" />
                             <input
@@ -126,30 +125,27 @@ const DiscoverPage = () => {
                             />
                         </div>
 
-                        {/* Loading */}
                         {loading && (
                             <p className="text-center text-gray-400">
                                 Loading products...
                             </p>
                         )}
 
-                        {/* Empty */}
                         {!loading && filteredProducts.length === 0 && (
                             <p className="text-center text-gray-400">
                                 No products found
                             </p>
                         )}
 
-                        {/* Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                             {filteredProducts.map((product) => (
                                 <PostCard
                                     key={product.id}
+                                    product={product}
                                     image={product.image}
                                     title={product.title}
                                     price={product.price}
                                     count={product.rating?.count}
-                                    product={product}
                                 />
                             ))}
                         </div>

@@ -1,13 +1,26 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
 import { GiRoundStar } from "react-icons/gi";
 import { LuClock5 } from "react-icons/lu";
 import { PiHouseLineLight } from "react-icons/pi";
 import { CiChat1 } from "react-icons/ci";
-import { useCart } from "@/context/CartContext";
 
 const PostCard = ({ product }) => {
     const { addToCart } = useCart();
+    const { isLoggedIn } = useAuth();
+    const router = useRouter();
+
+    const handleAddToCart = () => {
+        if (!isLoggedIn) {
+            router.push("/login");
+            return;
+        }
+
+        addToCart(product);
+    };
 
     return (
         <div className="group bg-white border rounded-lg overflow-hidden hover:shadow-lg transition">
@@ -47,8 +60,9 @@ const PostCard = ({ product }) => {
                 <button className="w-12 flex items-center justify-center hover:bg-gray-100 transition">
                     <CiChat1 />
                 </button>
+
                 <button
-                    onClick={() => addToCart(product)}
+                    onClick={handleAddToCart}
                     className="flex-1 bg-[#388186] text-white py-2 hover:bg-[#2f6e72] transition"
                 >
                     Add to Cart

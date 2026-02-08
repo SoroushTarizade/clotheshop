@@ -1,32 +1,39 @@
 "use client";
-import { createContext, useContext, useState, useEffect, Children } from "react";
 
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+
+    // load auth from localStorage
     useEffect(() => {
-        const savedUser = localStorage.getItem("user");
-        if (savedUser) setUser(JSON.parse(savedUser));
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
     }, []);
 
     const login = (userData) => {
         setUser(userData);
-        localStorage.setItem("user", JSON.stringify(userData))
-    }
-
+        localStorage.setItem("user", JSON.stringify(userData));
+    };
 
     const logout = () => {
         setUser(null);
         localStorage.removeItem("user");
     };
 
+    const isLoggedIn = !!user;
+
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider
+            value={{ user, isLoggedIn, login, logout }}
+        >
             {children}
         </AuthContext.Provider>
-    )
-}
+    );
+};
 
-export const useAuth = () => useContext(AuthContext)
+export const useAuth = () => useContext(AuthContext);

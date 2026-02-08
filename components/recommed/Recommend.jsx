@@ -49,6 +49,7 @@ const Recommend = () => {
                             <div className="h-[418px] bg-white flex flex-col justify-between  rounded">
                                 <img
                                     src={`./images/recommed-image${i}.jpg`}
+                                    alt='image cover'
                                     className="h-64 w-full object-cover rounded-t" />
                                 <div className="p-3 text-sm space-y-2">
                                     <div className="flex justify-between">

@@ -3,6 +3,8 @@ import { ImFacebook } from "react-icons/im";
 import { RiTwitterXFill } from "react-icons/ri";
 
 const Footer = () => {
+
+
   return (
     <footer className="bg-[#2E2B2B] text-white">
       <div className="max-w-[1540px] mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col items-center">
