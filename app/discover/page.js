@@ -20,7 +20,7 @@ const DiscoverPage = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await fetch("/api/products");
+                const res = await fetch("https://fakestoreapi.com/products");
                 const data = await res.json();
                 setProducts(data);
             } catch (error) {
@@ -33,17 +33,19 @@ const DiscoverPage = () => {
         fetchProducts();
     }, []);
 
-    const filteredProducts = products.filter((product) => {
-        const matchesSearch = product.title
-            .toLowerCase()
-            .includes(search.toLowerCase());
+    const filteredProducts = Array.isArray(products)
+        ? products.filter((product) => {
+            const matchesSearch = product.title
+                .toLowerCase()
+                .includes(search.toLowerCase());
 
-        const matchesCategory = activeCategory
-            ? product.category === activeCategory
-            : true;
+            const matchesCategory = activeCategory
+                ? product.category === activeCategory
+                : true;
 
-        return matchesSearch && matchesCategory;
-    });
+            return matchesSearch && matchesCategory;
+        })
+        : [];
 
     return (
         <>
