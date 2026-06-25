@@ -1,56 +1,113 @@
-# 🛍️ Clothing Shop – Frontend Project
+# 🛒 Modern Clothes Shop
 
-A modern e-commerce frontend built with **Next.js** and **React**.
+A modern and responsive e-commerce web application built with Next.js and React.
 
-## 🚀 Features
-- Product listing from REST API
-- Live search & category filtering
-- Authentication flow (login required for add to cart)
-- Shopping cart with quantity control
-- Cart persistence using LocalStorage
-- Responsive UI (Mobile & Desktop)
-- Clean UI / UX with Tailwind CSS
+## 🚀 Live Demo
 
-## 🛠 Tech Stack
-- Next.js (App Router)
-- React.js
-- JavaScript (ES6+)
-- Tailwind CSS
-- Context API
+🔗 Live Website:
+https://clotheshop.onrender.com
 
-## 🔐 Demo Login
+🔗 GitHub Repository:
+https://github.com/SoroushTarizade/clotheshop
 
-## Getting Started
+---
 
-First, run the development server:
+## 📌 Overview
+
+This project is a modern front-end e-commerce application developed using Next.js and React.
+
+The application connects to FakeStore API and provides a complete shopping experience including product browsing, authentication, search functionality, category filtering, and shopping cart management.
+
+The main goal of this project was to improve my skills in building scalable React applications and implementing real-world e-commerce features.
+
+---
+
+## ✨ Features
+
+* User Authentication
+* Product Listing
+* Product Details Page
+* Category Filtering
+* Product Search
+* Shopping Cart Management
+* Responsive Design
+* Dynamic Routing
+* API Integration
+* Modern UI/UX
+
+---
+
+## 🛠️ Built With
+
+* Next.js
+* React.js
+* JavaScript (ES6+)
+* Tailwind CSS
+* Axios
+* Fake Store API
+
+---
+
+## 📱 Responsive Design
+
+The application is fully responsive and optimized for:
+
+* Desktop
+* Tablet
+* Mobile Devices
+
+---
+
+## 🎯 Challenges & Learning Outcomes
+
+During this project I improved my understanding of:
+
+* Component-based architecture
+* State management in React
+* API integration
+* Dynamic routing in Next.js
+* Responsive web design
+* Clean and maintainable code structure
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/SoroushTarizade/clotheshop.git
+```
+
+Navigate to project directory:
+
+```bash
+cd clotheshop
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 👨‍💻 Author
 
-## Learn More
+Soroush Tarizadeh
 
-To learn more about Next.js, take a look at the following resources:
+Front-End Developer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GitHub:
+https://github.com/SoroushTarizade
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+LinkedIn:
+soroush-tarizadeh
